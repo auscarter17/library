@@ -28,7 +28,7 @@ function displayBooks() {
         
         Object.entries(book).slice(1).forEach(([key, value]) => {
             const listItem = document.createElement("li")
-            listItem.textContent = `${key}: ${value}`
+            listItem.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
             newList.appendChild(listItem)
         })
     })
