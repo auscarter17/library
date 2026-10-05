@@ -26,7 +26,7 @@ function displayBooks() {
         bookContainerEl.appendChild(newDiv)
         newDiv.appendChild(newList)
         
-        Object.entries(book).forEach(([key, value]) => {
+        Object.entries(book).slice(1).forEach(([key, value]) => {
             const listItem = document.createElement("li")
             listItem.textContent = `${key}: ${value}`
             newList.appendChild(listItem)
