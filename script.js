@@ -12,7 +12,7 @@ function Book() {
     this.year = year;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title, author, year) {
     // add book to library using params
 }
 

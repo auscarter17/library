@@ -1,0 +1,39 @@
+*{
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+}
+
+.header {
+    height: 10vh;
+    border: 1px solid black;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.sidebar {
+    flex-grow: 1;
+    max-width: 25%;
+    min-height: 90vh;
+    border: 1px solid blue;
+    align-items: center;
+}
+
+#book-container {
+    flex-grow:1;
+    border: 1px solid red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book {
+    margin: 10px;
+    padding: 10px;
+}
