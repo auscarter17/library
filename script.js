@@ -1,6 +1,7 @@
 const bookContainerEl = document.getElementById("book-container")
 const newBookButtonEl = document.querySelector(".new-book-btn")
 const newBookFormEl = document.querySelector(".new-book-form")
+const formEl = document.querySelector(".new-book-form")
 
 const myLibrary = [
     { id: 1, title: "A Head Full of Ghosts", author: "Paul Tremblay", year: 2015 },
@@ -22,12 +23,15 @@ function addBookToLibrary(bookTitle, bookAuthor, bookYear) {
         author: bookAuthor,
         year: bookYear}
     )
+    displayBooks()
 }
 
 addBookToLibrary("Eragon", "Christopher Paolini", 2002)
 
 function displayBooks() {
+    bookContainerEl.textContent = ''
     myLibrary.forEach((book) => {
+        
         const newDiv = document.createElement("div")
         const newList = document.createElement("ul")
 
@@ -46,9 +50,17 @@ function displayBooks() {
 
 newBookButtonEl.addEventListener("click", () => {
     newBookFormEl.classList.toggle("hidden")
-    // add rules to switch button content depending on whether form is showing
+    // add rules to switch button text content depending on whether form is showing
 })
 
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const title = document.getElementById("title").value
+    const author = document.getElementById("author").value
+    const year = document.getElementById("year").value
+
+    addBookToLibrary(title, author, year)
+})
 
 
 displayBooks()
